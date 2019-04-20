@@ -8,7 +8,7 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
-
+const cors         = require('cors')
 const session = require('express-session');
 
 // import passport docs from config folder
@@ -53,6 +53,11 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
+
+app.use(cors({
+  credentials: true,
+  origin: ['http://localhost:3000'] 
+}));
 
 // handle session here:
 // app.js
