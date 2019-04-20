@@ -78,6 +78,8 @@ const index = require('./routes/index');
 app.use('/', index);
 
 app.use('/api', require("./routes/auth-routes.js"));
+app.use('/api', require('./routes/phone-route'))
+app.use('/api', require('./routes/file-upload-route'))
 
 
 module.exports = app;
